@@ -34,7 +34,6 @@
     </form>
 
 </section>
-<p id="result1"></p>
 
 <script> 
     let baseEl = document.getElementById("base");
@@ -54,7 +53,7 @@
         let exp = parseInt(expEl.value);
         let list = document.getElementsByName("operation");
         let checkCl;
-        let result1;
+        let result;
         for (let i = 0; i < list.length; i++) {
                 if (list[i].checked) {
                     checkCl = list[i]
@@ -62,26 +61,26 @@
         }
         switch(checkCl.value) {
                 case "plus": {
-                    result1 = (base) + (exp);
+                    result = (base) + (exp);
                     break;
                 }
                 case "minus": {
-                    result1 = base - exp;
+                    result = base - exp;
                     break;
                 }
                 case "times": {
-                    result1 = base * exp;
+                    result = base * exp;
                     break;
                 }
                 case "divide": {
-                    result1 = base / exp;
+                    result = base / exp;
                     break;
                 }
                 default: {
                     break;
                 }
             }
-            document.getElementById("result1").innerText = "Arithmetic operation value is: "+result1;
+            document.getElementById("result").innerText = "Arithmetic operation value is: "+result;
     }
 </script>
 

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+ <title>Cars</title>
+<body>
+<h1>Abhilash Reddy Malipatlola orders a car</h1>
+<h2>Getting input</h2>
+
+
+<form>
+    <div class="form-check">
+        <input type ="checkbox" class="form-check-input" id="electric"  value="electric"> 
+        <label for="electric" >electric </label>
+    </div>
+    <div class="form-check">
+        <input type ="checkbox" class="form-check-input" id="ac"  value="ac">         
+        <label for="ac" >ac </label>
+    </div>
+    <div class="form-check">
+        <input type ="checkbox" class="form-check-input" id="gps"> 
+        <label for="gps" >gps </label>
+    </div>
+
+    <input type="button" class="btn btn-primary mt-4" onclick="orderCar()" value="Order a car">
+
+</form>
+
+
+<p id="result"> </p>
+
+<script> 
+let my_car ={};
+function orderCar (){
+    my_car['electric'] = document.getElementById("electric").checked;
+    my_car['gps'] = document.getElementById("gps").checked;
+    my_car['ac'] = document.getElementById("ac").checked;
+
+    displayResult(); 
+}
+function displayResult(){
+    let r = document.createElement('div');
+    Object.keys(my_car).forEach( key => {
+        let innerDiv = document.createElement('div');
+        innerDiv.innerText = `${key} :  ${my_car[key]}`;
+        r.append(innerDiv);
+    })
+    document.getElementById("result").innerHTML =  r.innerHTML;
+    displayToast();
+}
+function displayToast() {
+    liveToast.classList.replace('hide', 'show');
+    setTimeout(() => {
+    liveToast.classList.replace('show', 'hide');
+    },2000)
+}
+
+</script>
+
+</body>
+</html> 
