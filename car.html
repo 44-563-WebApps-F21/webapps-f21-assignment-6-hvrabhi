@@ -29,7 +29,7 @@
 </form>
 
 
-<p id="result"> </p>
+<b><p id="result"> </p></b>
 
 <form>
     <div class="form-group">
@@ -44,6 +44,7 @@
     <input type="button"  class="btn btn-primary mt-4" onclick="updateCar()" value="Update the car">
 
 </form>
+<b><p id="result1"> </p></b>
 
 <script> 
 let my_car ={};
@@ -76,7 +77,17 @@ function updateCar() {
 
     my_car[property] = propertyValue;
 
-    displayResult();
+    displayResults();
+}
+function displayResults(){
+    let r = document.createElement('div');
+    Object.keys(my_car).forEach( key => {
+        let innerDiv = document.createElement('div');
+        innerDiv.innerText = `${key} :  ${my_car[key]}`;
+        r.append(innerDiv);
+    })
+    document.getElementById("result1").innerHTML =  r.innerHTML;
+    displayToast();
 }
 </script>
 

@@ -36,7 +36,7 @@
         <div class="form-group">
         <input type="radio" class="form-check-input" id="plus" name="operation"  onclick="processRadio()" value="plus">
         <label for="plus" class="form-check-label">+</label>
-        </div></br>
+        </div>
         <div class="form-check">        
         <input type="radio" class="form-check-input" id="minus" name="operation" onclick="processRadio()" value="minus">
         <label for="minus" class="form-check-label">-</label></br>
@@ -50,6 +50,7 @@
         <label for="divide" class="form-check-label">/</label>
         </div></br>
     </form>
+    <p id="result1" class="alert alert-primary col-auto"></p>
 
 </section>
 
@@ -79,26 +80,26 @@
         }
         switch(checkCl.value) {
                 case "plus": {
-                    result = (base) + (exp);
+                    result1 = (base) + (exp);
                     break;
                 }
                 case "minus": {
-                    result = base - exp;
+                    result1 = base - exp;
                     break;
                 }
                 case "times": {
-                    result = base * exp;
+                    result1 = base * exp;
                     break;
                 }
                 case "divide": {
-                    result = base / exp;
+                    result1 = base / exp;
                     break;
                 }
                 default: {
                     break;
                 }
             }
-            document.getElementById("result").innerText = "Arithmetic operation value is: "+result;
+            document.getElementById("result1").innerText = "Arithmetic operation value is: "+result1;
     }
 </script>
 
