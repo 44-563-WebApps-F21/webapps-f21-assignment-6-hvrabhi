@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
- 
+ <title>Maths class</title>
 <body>
 <h1>Abhilash Reddy Malipatlola computes</h1>
 <h2>Getting input</h2>
@@ -18,6 +18,24 @@
 
 <p id="result"></p>
 
+<section class="form">
+    <form>
+        <input type="radio" id="plus" name="operation"  onclick="processRadio()" value="plus">
+        <label for="plus">+</label></br>
+
+        <input type="radio" id="minus" name="operation" onclick="processRadio()" value="minus">
+        <label for="minus">-</label></br>
+
+        <input type="radio" id="times" name="operation" onclick="processRadio()" value="times">
+        <label for="times">*</label></br>
+
+        <input type="radio" id="divide" name="operation" onclick="processRadio()" value="divide">
+        <label for="divide">/</label></br>
+    </form>
+
+</section>
+<p id="result1"></p>
+
 <script> 
     let baseEl = document.getElementById("base");
     let expEl = document.getElementById("exponent");
@@ -29,6 +47,41 @@
             result = `${result} ${Math.pow(base, i)}`;
         }
         document.getElementById("result").innerText = "Powers of base are: " +result ;
+    }
+
+    function processRadio() {
+        let base = parseInt(baseEl.value);
+        let exp = parseInt(expEl.value);
+        let list = document.getElementsByName("operation");
+        let checkCl;
+        let result1;
+        for (let i = 0; i < list.length; i++) {
+                if (list[i].checked) {
+                    checkCl = list[i]
+                }
+        }
+        switch(checkCl.value) {
+                case "plus": {
+                    result1 = (base) + (exp);
+                    break;
+                }
+                case "minus": {
+                    result1 = base - exp;
+                    break;
+                }
+                case "times": {
+                    result1 = base * exp;
+                    break;
+                }
+                case "divide": {
+                    result1 = base / exp;
+                    break;
+                }
+                default: {
+                    break;
+                }
+            }
+            document.getElementById("result1").innerText = "Arithmetic operation value is: "+result1;
     }
 </script>
 
