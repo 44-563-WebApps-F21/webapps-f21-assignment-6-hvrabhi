@@ -1,36 +1,54 @@
 <!DOCTYPE html>
 <html>
- <title>Maths class</title>
+    <title>Maths class</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
 <body>
-<h1>Abhilash Reddy Malipatlola computes</h1>
-<h2>Getting input</h2>
+    <div class="container">
+    <h1  class="text-center">Abhilash Reddy Malipatlola computes</h1>
+    <h2 class="mb-4 mt-4 p-2 border-bottom ">Getting input</h2>
+    </div>
 
 <form>
+    <div class="form-group">
     <label for="base">Enter a base </label>
-    <input type ="number" id="base" name="base" value=10> <br>
-
+    <input type ="number" class="form-control" id="base" name="base" value=10> 
+    </div><br>
+    <div class="form-group mt-4">
     <label for="exponent">Enter an exponent</label>
-    <input type ="text" id="exponent" name="exponent" autofocus> <br>
+    <input type ="text" class="form-control" id="exponent" name="exponent" autofocus> 
+    </div><br>
 
-    <input type="button" onclick="powers()" value="compute">
+    <input type="button" class="btn btn-primary mt-4 mb-4" onclick="powers()" value="compute">
 </form>
 
 
-<p id="result"></p>
+<p id="result" class="alert alert-primary col-auto"></p>
 
 <section class="form">
     <form>
-        <input type="radio" id="plus" name="operation"  onclick="processRadio()" value="plus">
-        <label for="plus">+</label></br>
-
-        <input type="radio" id="minus" name="operation" onclick="processRadio()" value="minus">
-        <label for="minus">-</label></br>
-
-        <input type="radio" id="times" name="operation" onclick="processRadio()" value="times">
-        <label for="times">*</label></br>
-
-        <input type="radio" id="divide" name="operation" onclick="processRadio()" value="divide">
-        <label for="divide">/</label></br>
+        <div class="form-group">
+        <input type="radio" class="form-check-input" id="plus" name="operation"  onclick="processRadio()" value="plus">
+        <label for="plus" class="form-check-label">+</label>
+        </div></br>
+        <div class="form-check">        
+        <input type="radio" class="form-check-input" id="minus" name="operation" onclick="processRadio()" value="minus">
+        <label for="minus" class="form-check-label">-</label></br>
+        </div>
+        <div class="form-check">
+        <input type="radio" class="form-check-input" id="times" name="operation" onclick="processRadio()" value="times">
+        <label for="times" class="form-check-label">*</label></br>
+        </div>
+        <div class="form-check">
+        <input type="radio" class="form-check-input" id="divide" name="operation" onclick="processRadio()" value="divide">
+        <label for="divide" class="form-check-label">/</label>
+        </div></br>
     </form>
 
 </section>
