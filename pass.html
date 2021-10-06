@@ -2,6 +2,15 @@
 <html>
     <head>
         <title>Assignment 6</title>
+        <style>
+            .image {
+             width: 200px;
+             height: 200px;
+             cursor: pointer;
+             margin-top: 1rem;
+             object-fit: cover;
+         }
+        </style>
     </head>
     <body>
         
@@ -17,13 +26,19 @@
             <input type="button" onclick="processPhrase()" value="Check the phrase">
         </form>
 
-        <p id="result">This text will be replaced </p>
+        <p id="result">Correct/Wrong</p>
+
+        <div class="container">
+            <img onclick="newImage()" src="images/Monkey.jpg" alt="Monkey" class="image">
+        </div>
 
         
 <script> 
 
     var correct=0
     var wrong=0
+    var currentImage = 1
+    const image = document.getElementsByClassName("image")[0];
 
     function processPhrase (){
         console.log("Getting form values")
@@ -41,6 +56,29 @@
             out.innerHTML = "Wrong:" +wrong
         }
     }
+    function newImage() {
+        switch(currentImage){
+            case 1: {
+                currentImage =2;
+                image.src ='images/Lion.jpg';
+                break;
+            }
+            case 2: {
+                currentImage =3;
+                image.src ='images/Ant.jpg';
+                break;
+            }
+            case 3: {
+                currentImage =1;
+                image.src ='images/Monkey.jpg';
+                break;
+            }
+            default: {
+                break;
+            }
+        }
+    }
+
     </script>
 
     </body>
